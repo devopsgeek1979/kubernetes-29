@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   # Kubernetes Master Server
   config.vm.define "kmaster" do |kmaster|
     kmaster.vm.box = "generic/rhel9"
-    kmaster.vm.hostname = "kmaster.upagri.com"
+    kmaster.vm.hostname = "kmaster.example.com"
     kmaster.vm.network "private_network", ip: "172.16.16.100"
     kmaster.vm.provider "virtualbox" do |v|
       v.name = "kmaster"
@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
   (2..NodeCount).each do |i|
     config.vm.define "kworker#{i}" do |workernode|
       workernode.vm.box = "generic/rhel9"
-      workernode.vm.hostname = "kworker#{i}.upagri.com"
+      workernode.vm.hostname = "kworker#{i}.example.com"
       workernode.vm.network "private_network", ip: "172.16.16.10#{i}"
       workernode.vm.provider "virtualbox" do |v|
         v.name = "kworker#{i}"
