@@ -7,7 +7,7 @@ EOF
 
 # Install docker from Docker-ce repository
 echo "[TASK 2] Register System with RHEL Repo"
-subscription-manager register --username vashisht.jammu --password Maadhavan@2021# --auto-attach
+subscription-manager register --username [your-rhel-subscriptionaccount] --password [your-rhel-subscription-password] --auto-attach
 subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
 dnf update -y && dnf install -y iptables-legacy
 alternatives --set iptables /usr/sbin/iptables-legacy
